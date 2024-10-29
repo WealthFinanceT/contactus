@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Profile</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full-page styling with fixed background */
+        html, body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: #4d2d00; /* Dark brown text */
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Fixed background that fills the entire screen */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, #8b5e3c, #e2c4a5);
+            animation: gradientShift 6s infinite alternate;
+            z-index: -2;
+        }
+
+        @keyframes gradientShift {
+            0% { background: linear-gradient(120deg, #8b5e3c, #e2c4a5); }
+            100% { background: linear-gradient(120deg, #e2c4a5, #8b5e3c); }
+        }
+
+        /* Floating profile container */
+        .profile-container {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            animation: float 3s ease-in-out infinite;
+            transform-origin: center;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(-5px); }
+            50% { transform: translateY(5px); }
+        }
+
+        /* Profile picture with glow effect */
+        .profile-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 5px solid #4d2d00;
+            box-shadow: 0 0 15px rgba(255, 185, 85, 0.5);
+        }
+
+        /* Profile title */
+        .profile-container h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        /* Telegram button with glowing effect */
+        .profile-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4d2d00;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(77, 45, 0, 0.3), 0 0 15px rgba(255, 185, 85, 0.4);
+        }
+
+        .profile-container a:hover {
+            background-color: #703e00;
+            box-shadow: 0 0 15px rgba(255, 185, 85, 0.6), 0 0 30px rgba(255, 185, 85, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* Dotted circles */
+        .dotted-circle {
+            position: absolute;
+            border: 3px dotted #4d2d00;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: circleMove 5s ease-in-out infinite alternate;
+            z-index: -1;
+        }
+
+        /* Different sizes and positions for each circle */
+        .dotted-circle:nth-child(1) {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: 20%;
+            animation-duration: 6s;
+        }
+
+        .dotted-circle:nth-child(2) {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            right: 25%;
+            animation-duration: 8s;
+        }
+
+        .dotted-circle:nth-child(3) {
+            width: 120px;
+            height: 120px;
+            bottom: 15%;
+            left: 15%;
+            animation-duration: 7s;
+        }
+
+        /* Circle animation */
+        @keyframes circleMove {
+            0% { transform: translateY(-10px); }
+            100% { transform: translateY(10px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dotted circles in the background -->
+    <div class="dotted-circle"></div>
+    <div class="dotted-circle"></div>
+    <div class="dotted-circle"></div>
+
+    <div class="profile-container">
+        <img src="b.jpg" alt="Profile Picture">
+        <h2>Brains Siganls</h2>
+        <p>Connect with me on Telegram!</p>
+        <a href="https://t.me/brainssignals" target="_blank">Brains Siganls</a>
+    </div>
+</body>
+</html>
